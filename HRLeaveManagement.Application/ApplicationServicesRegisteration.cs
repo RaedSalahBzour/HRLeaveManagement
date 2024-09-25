@@ -5,11 +5,16 @@ namespace HRLeaveManagement.Application
 {
     public static class ApplicationServicesRegisteration
     {
-        public static void AddApplicationServices(this IServiceCollection services)
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            //or this for specific file
+            //or this for a specific file
             //services.AddAutoMapper(typeof(MappingProfile));
+            services.AddMediatR(ctg =>
+            {
+                ctg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+            });
+            return services;
         }
     }
 }

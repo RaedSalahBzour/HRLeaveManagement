@@ -5,7 +5,7 @@ namespace HRLeaveManagement.Application
 {
     public static class ApplicationServicesRegisteration
     {
-        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+        public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             //or this for a specific file

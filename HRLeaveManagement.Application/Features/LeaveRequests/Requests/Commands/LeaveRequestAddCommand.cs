@@ -1,10 +1,11 @@
 ﻿using HRLeaveManagement.Application.DTOs.LeaveRequest;
+using HRLeaveManagement.Application.Responses;
 using MediatR;
 
 namespace HRLeaveManagement.Application.Features.LeaveRequests.Requests.Commands
 {
-    public class LeaveRequestAddCommand : IRequest<int>
+    public class LeaveRequestAddCommand : IRequest<BaseCommandResponse>
     {
-        public LeaveRequestDto leaveRequestDto { get; set; }
+        public CreateLeaveRequestDto leaveRequestDto { get; set; }
     }
 }

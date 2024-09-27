@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HRLeaveManagement.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d8cb8d527f88337ac30d9a85b411ba402273e65")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83d0e71e278f19cca7c87bfa6b1ffcaf31672041")]
 [assembly: System.Reflection.AssemblyProductAttribute("HRLeaveManagement.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HRLeaveManagement.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

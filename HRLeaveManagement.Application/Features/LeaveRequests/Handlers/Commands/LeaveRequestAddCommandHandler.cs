@@ -12,23 +12,21 @@ namespace HRLeaveManagement.Application.Features.LeaveRequests.Handlers.Commands
 {
     public class LeaveRequestAddCommandHandler : IRequestHandler<LeaveRequestAddCommand, BaseCommandResponse>
     {
-        private readonly ILeaveRequestRepository _leaveRequestRepository;
-        private readonly ILeaveTypeRepository _leaveTypeRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IEmailSender _emailSender;
         private readonly IMapper _mapper;
-        public LeaveRequestAddCommandHandler(ILeaveRequestRepository leaveRequestRepository, IMapper mapper,
-            ILeaveTypeRepository leaveTypeRepository, IEmailSender emailSender)
+        public LeaveRequestAddCommandHandler(IMapper mapper,
+         IEmailSender emailSender, IUnitOfWork unitOfWork)
         {
-            _leaveRequestRepository = leaveRequestRepository;
             _mapper = mapper;
-            _leaveTypeRepository = leaveTypeRepository;
             _emailSender = emailSender;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<BaseCommandResponse> Handle(LeaveRequestAddCommand request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse();
-            var vaildator = new CreateLeaveRequestDtoValidator(_leaveTypeRepository);
+            var vaildator = new CreateLeaveRequestDtoValidator(_unitOfWork.LeaveTypeRepository);
             var validationResult = await vaildator.ValidateAsync(request.leaveRequestDto);
             if (validationResult.IsValid == false)
             {
@@ -39,7 +37,7 @@ namespace HRLeaveManagement.Application.Features.LeaveRequests.Handlers.Commands
             else
             {
                 var addedRequest = _mapper.Map<LeaveRequest>(request.leaveRequestDto);
-                addedRequest = await _leaveRequestRepository.Add(addedRequest);
+                addedRequest = await _unitOfWork.LeaveRequestRepository.Add(addedRequest);
                 response.Success = true;
                 response.Message = "Request Created Successfully";
                 response.Id = addedRequest.Id;

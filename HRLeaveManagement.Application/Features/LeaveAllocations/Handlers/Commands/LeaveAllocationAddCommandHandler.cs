@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using HRLeaveManagement.Application.Contracts.Persistence;
 using HRLeaveManagement.Application.DTOs.LeaveAllocation.Validators;
 using HRLeaveManagement.Application.Features.LeaveAllocations.Requests.Commands;
-using HRLeaveManagement.Application.Contracts.Persistence;
 using HRLeaveManagement.Application.Responses;
 using HRLeaveManagement.Domain;
 using MediatR;
@@ -10,21 +10,19 @@ namespace HRLeaveManagement.Application.Features.LeaveAllocations.Handlers.Comma
 {
     public class LeaveAllocationAddCommandHandler : IRequestHandler<LeaveAllocationAddCommand, BaseCommandResponse>
     {
-        private readonly ILeaveAllocationRepository _leaveAllocationRepository;
-        private readonly ILeaveTypeRepository _leaveTypeRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public LeaveAllocationAddCommandHandler(ILeaveAllocationRepository leaveAllocationRepository, IMapper mapper, ILeaveTypeRepository leaveTypeRepository)
+        public LeaveAllocationAddCommandHandler(IMapper mapper, IUnitOfWork unitOfWork)
         {
-            _leaveAllocationRepository = leaveAllocationRepository;
             _mapper = mapper;
-            _leaveTypeRepository = leaveTypeRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<BaseCommandResponse> Handle(LeaveAllocationAddCommand request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse();
-            var validator = new CreateLeaveAllocationDtoValidator(_leaveTypeRepository);
+            var validator = new CreateLeaveAllocationDtoValidator(_unitOfWork.LeaveTypeRepository);
             var validationResult = await validator.ValidateAsync(request.leaveAllocationDto);
             if (validationResult.IsValid == false)
             {
@@ -35,7 +33,7 @@ namespace HRLeaveManagement.Application.Features.LeaveAllocations.Handlers.Comma
             else
             {
                 var addedAllocation = _mapper.Map<LeaveAllocation>(request.leaveAllocationDto);
-                addedAllocation = await _leaveAllocationRepository.Add(addedAllocation);
+                addedAllocation = await _unitOfWork.LeaveAllocationRepository.Add(addedAllocation);
                 response.Success = true;
                 response.Message = "Allocations Successful";
             }

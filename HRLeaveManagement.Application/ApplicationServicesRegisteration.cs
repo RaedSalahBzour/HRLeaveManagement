@@ -8,6 +8,8 @@ namespace HRLeaveManagement.Application
         public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+
             //or this for a specific file
             //services.AddAutoMapper(typeof(MappingProfile));
             services.AddMediatR(ctg =>

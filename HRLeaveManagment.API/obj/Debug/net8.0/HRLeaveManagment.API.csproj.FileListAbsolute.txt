@@ -3,7 +3,6 @@ C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\obj\Debug\n
 C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\obj\Debug\net8.0\HRLeaveManagment.API.AssemblyInfoInputs.cache
 C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\obj\Debug\net8.0\HRLeaveManagment.API.AssemblyInfo.cs
 C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\obj\Debug\net8.0\HRLeaveManagment.API.csproj.CoreCompileInputs.cache
-C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\obj\Debug\net8.0\HRLeaveManagment.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\obj\Debug\net8.0\HRLeaveManagment.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\obj\Debug\net8.0\HRLeaveManagment.API.sourcelink.json
 C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\bin\Debug\net8.0\appsettings.Development.json
@@ -138,6 +137,7 @@ C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\bin\Debug\n
 C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\bin\Debug\net8.0\HRLeaveManagement.Persistence.pdb
 C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\bin\Debug\net8.0\HRLeaveManagement.Application.pdb
 C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\bin\Debug\net8.0\HRLeaveManagement.Domain.pdb
+C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\obj\Debug\net8.0\HRLeaveManagment.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\BisanCo\Desktop\.NET\HRLeaveManagement\HRLeaveManagment.API\obj\Debug\net8.0\staticwebassets\msbuild.HRLeaveManagment.API.Microsoft.AspNetCore.StaticWebAssets.props

@@ -13,6 +13,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.ConfigureApplicationServices();
 builder.Services.ConfigureInfrastructureServices(builder.Configuration);
 builder.Services.ConfigurePersistenceServices(builder.Configuration);
+//builder.Services.AddControllers()
+//    .AddFluentValidation(fv =>
+//    {
+//        // Automatically register all validators from this assembly
+//        fv.RegisterValidatorsFromAssemblyContaining<CreateLeaveRequestDtoValidator>();
+//    });
+
 
 var app = builder.Build();
 

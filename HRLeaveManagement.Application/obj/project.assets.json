@@ -464,6 +464,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
+      "FluentValidation >= 11.10.0",
       "FluentValidation.DependencyInjectionExtensions >= 11.10.0",
       "HRLeaveManagement.Domain >= 1.0.0",
       "MediatR >= 12.4.1"
@@ -521,6 +522,10 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
             "version": "[12.0.1, )"
+          },
+          "FluentValidation": {
+            "target": "Package",
+            "version": "[11.10.0, )"
           },
           "FluentValidation.DependencyInjectionExtensions": {
             "target": "Package",

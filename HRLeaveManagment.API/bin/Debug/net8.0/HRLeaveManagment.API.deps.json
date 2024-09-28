@@ -10,6 +10,7 @@
         "dependencies": {
           "HRLeaveManagement.Infrastructure": "1.0.0",
           "HRLeaveManagement.Persistence": "1.0.0",
+          "MediatR": "12.4.1",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.8",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
